@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="vh-100 d-flex justify-content-center align-items-center ">
+
+    <div class="box">
+        <span class="move"></span>
+        <span class="move"></span>
+        <span class="move"></span>
+        <span class="move"></span>
+        <div class="Requirement overflow-hidden ">
+
+
+            <input type="checkbox" id="chk"  aria-hidden="true" class="d-none">
+
+            <div class="signup overflow-auto">
+
+                <label for="chk" class="mt-2" aria-hidden="true">
+                    <span><i class="fa fa-user-plus icon px-2"></i></span> Sign up</label>
+                <input type="text" class="form-control w-75 m-auto mb-3" name="" id="signupName" onkeyup="validationName()"
+                placeholder="Enter your Name"
+                />
+
+                <input type="text" class="form-control w-75 m-auto mb-3" name="" id="signupEmail"
+                placeholder="Enter your email"
+                onkeyup="validationEmail(document.getElementById('signupEmail'),document.getElementById('signupEmailReq'))" />
+
+                        <label for="" class="form-label w-75 m-auto ms-2 d-none  pb-0" id="signupEmailReq">
+                        <ul class="text-danger">
+                            <li class="">
+                            The email couldn't start or finish with a dot
+                            </li>
+                            <li class="">
+                            The email shouldn't contain spaces or<br/> special chars (:, *,ecc) into the string
+                            </li>
+                        </ul>
+        
+                    </label>
+            <input type="password" class="form-control w-75 m-auto mt-3" name="" id="signupPassword" required=""
+                onkeyup="validationPsw(document.getElementById('signupPassword'),document.getElementById('signupPswReq'))" placeholder="Enter your password" />
+                <label for="" class="form-label w-75 m-auto ms-2 d-none  pb-0" id="signupPswReq">
+                    <ul class="text-danger">
+                        <li class="">
+                            Password has a minimum of 6 characters.
+                        </li>
+                        <li class="">
+                            At least 1 uppercase letter, 1 lowercase letter, and 1 number with no spaces.
+                        </li>
+                    </ul>
+    
+                </label>
+
+            
+            <label class="text-danger fw-bold text-capitalize error" id = "signError"></label>
+            <button onclick="signUp()"   class="m-auto "  id="btn-login">Sign Up</button>
+            </div>
+
+            <div class="login">
+                <label for="chk" aria-hidden="true">
+                  <span>
+                    <i class="fa fa-sign-in px-2 icon "></i> 
+                  </span> Login</label>
+                <input type="email" class="form-control w-75 m-auto mb-3" name="" id="emailTxt"
+                    placeholder="Enter your email" required=""
+                    onkeyup="validationEmail(document.getElementById('emailTxt'),document.getElementById('EmailReq'))" />
+
+                            <label for="" class="form-label w-75 m-auto ms-2 d-none  pb-0" id="EmailReq">
+                            <ul class="text-danger">
+                                <li class="">
+                                The email couldn't start or finish with a dot
+                                </li>
+                                <li class="">
+                                The email shouldn't contain spaces or<br/> special chars (:, *,ecc) into the string
+                                </li>
+                            </ul>
+            
+                        </label>
+                <input type="password" class="form-control w-75 m-auto my-3" name="" id="passwordTxt" required=""
+                    onkeyup="validationPsw(document.getElementById('passwordTxt'),document.getElementById('passwordReq'))" placeholder="Enter your password" />
+                    <label for="" class="form-label w-75 m-auto ms-2 d-none  pb-0" id="passwordReq">
+                        <ul class="text-danger">
+                            <li class="">
+                                Password has a minimum of 6 characters.
+                            </li>
+                            <li class="">
+                                At least 1 uppercase letter, 1 lowercase letter, and 1 number with no spaces.
+                            </li>
+                        </ul>
+        
+                    </label>
+
+                <label class="text-danger fw-bold text-capitalize  error" id = "loginError"></label>
+                <button onclick="login()"   class="m-auto "  id="btn-login">Login</button>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
